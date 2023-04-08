@@ -88,6 +88,7 @@ public class PictureServiceImp implements PictureService{
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+                picture.setStatus(Status.REJECTED);
                 pictureRepository.delete(picture);
                 return;
             }
