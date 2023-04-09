@@ -74,7 +74,7 @@ public class PicController {
             fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
             log.info("{}:{}", getClass().getSimpleName(), fileName);
         }
-        //todo: your picture will be reviewed by our admins before being approved ,stay toned.
+        // your picture will be reviewed by our admins before being approved ,stay tuned.
 
         imageMapper.saveFile(PropertiesExtractor.FILE_SERVER_PATH, fileName, multipartFile);
         pic.setStatus(PicStatus.PENDING);
@@ -89,7 +89,7 @@ public class PicController {
     @GetMapping("/pic/image/{id}")
     public void showProductImage(@PathVariable Long id, HttpServletResponse response)
             throws IOException, NotFoundException {
-        response.setContentType("image/jpeg"); // Or whatever format you wanna use
+        response.setContentType("image/jpeg"); // Or whatever format you want to use
 
         Pic product = picService.getById(id).orElseThrow(() -> new NotFoundException(id));
 
